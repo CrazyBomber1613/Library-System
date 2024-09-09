@@ -1,13 +1,10 @@
 public class Book extends LibraryItem{
-    private String title;
-    private String publisher;
-    private double price;
-    private String author;
-    private String ISBN;
-    private String genre;
-    //!! add setter and getter methods!!
-
-    protected Book(){}
+    private final String title;
+    private final String publisher;
+    private final double price;
+    private final String author;
+    private final String ISBN;
+    private final String genre;
 
     Book(String title , String publisher , double price , String author , String ISBN , String genre){
         this.title = title;
@@ -55,9 +52,5 @@ public class Book extends LibraryItem{
     public String genre(){return genre;}
     @Override
     public void read(){System.out.println("read as a physical book");}
-    @Override
-    public void print(){}
-    @Override
-    void catalogueItem(){}
     String getTitle(){return title;}
 }

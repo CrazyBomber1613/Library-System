@@ -1,4 +1,4 @@
-public class Magazine extends LibraryItem{
+public class Magazine extends LibraryItem {
     //data fields
     private String title;
     private String publisher;
@@ -7,7 +7,7 @@ public class Magazine extends LibraryItem{
     private String genre;
     //!! add setter and getter methods!!
 
-    Magazine(String title , String publisher, double price, int IssueNumber , String genre){
+    Magazine(String title, String publisher, double price, int IssueNumber, String genre) {
         this.title = title;
         this.publisher = publisher;
         this.price = price;
@@ -15,16 +15,21 @@ public class Magazine extends LibraryItem{
         this.genre = genre;
     }
 
-    @Override   //not completed
-    void printDetails(){
-        System.out.printf("Magazine: \"%s\"" , title);System.out.println();
-        System.out.printf("Publisher: \"%s\"" , publisher);System.out.println();
-        System.out.printf("Price: \"%.2f\"" , price);System.out.println();
-        System.out.printf("Issue Number: \"%d\"" , IssueNumber);System.out.println();
+    @Override
+        //not completed
+    void printDetails() {
+        System.out.printf("Magazine: \"%s\"", title);
+        System.out.println();
+        System.out.printf("Publisher: \"%s\"", publisher);
+        System.out.println();
+        System.out.printf("Price: \"%.2f\"", price);
+        System.out.println();
+        System.out.printf("Issue Number: \"%d\"", IssueNumber);
+        System.out.println();
     }
 
     @Override
-    String getDetails(String dataType){
+    String getDetails(String dataType) {
         String value;
         switch (dataType) {
             case "title":
@@ -49,15 +54,12 @@ public class Magazine extends LibraryItem{
         return value;
     }
 
-    public String genre(){return genre;}
+    public String genre() {
+        return genre;
+    }
 
     @Override
-    public void read(){System.out.println("read as a physical magazine");}
-
-    @Override   //not completed
-    public void print(){}
-
-    //categorizes the item and return its details as string
-    @Override   //not completed
-    void catalogueItem(){}
+    public void read() {
+        System.out.println("read as a physical magazine");
+    }
 }

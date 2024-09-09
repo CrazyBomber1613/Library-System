@@ -1,5 +1,4 @@
-public abstract class LibraryItem implements Readable , Printable {
+public abstract class LibraryItem implements Readable {
     abstract String getDetails(String dataType);
-    abstract void catalogueItem();
     abstract void printDetails();
 }

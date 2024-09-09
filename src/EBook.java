@@ -5,10 +5,8 @@ public class EBook extends Book{
     private String author;
     private String ISBN;
     private String genre;
-    private String DownloadURL;
-    private double FileSize;
-    //!! add setter and getter methods!!
-
+    private final String DownloadURL;
+    private final double FileSize;
 
     public EBook(String title, String publisher, double price, String author, String ISBN, String downloadURL, double fileSize, String genre) {
         super(title, publisher, price, author, ISBN , genre);
@@ -27,36 +25,17 @@ public class EBook extends Book{
     }
     @Override
     String getDetails(String dataType){
-        String value;
-        switch (dataType) {
-            case "title":
-                value = title;
-                break;
-            case "publisher":
-                value = publisher;
-                break;
-            case "price":
-                value = String.valueOf(price);
-                break;
-            case "author":
-                value = author;
-                break;
-            case "ISBN" , "isbn":
-                value = ISBN;
-                break;
-            case "genre":
-                value = genre;
-                break;
-            case "file size":
-                value = String.valueOf(FileSize);
-                break;
-            case "download url":
-                value = DownloadURL;
-                break;
-            default:
-                value = "invild data type!";
-                break;
-        }
+        String value = switch (dataType) {
+            case "title" -> title;
+            case "publisher" -> publisher;
+            case "price" -> String.valueOf(price);
+            case "author" -> author;
+            case "ISBN", "isbn" -> ISBN;
+            case "genre" -> genre;
+            case "file size" -> String.valueOf(FileSize);
+            case "download url" -> DownloadURL;
+            default -> "invalid data type!";
+        };
         return value;
     }
     @Override
